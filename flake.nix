@@ -9,6 +9,21 @@
     let pkgs = nixpkgs.legacyPackages.${system}; in
       {
         packages = rec {
+          gbdk = with pkgs; stdenv.mkDerivation {
+            version = "4.0.6";
+            name = "gbdk-2020";
+
+            src = fetchTarball {
+              url = "https://github.com/gbdk-2020/gbdk-2020/releases/download/4.0.6/gbdk-linux64.tar.gz";
+              sha256 = "sha256:1w68a1aplljc0jn834k02dd18rf3vziddyylywz7pppr8y3pd5vj";
+            };
+
+            installPhase = ''
+              mkdir -p $out/bin
+              cp gbdk/bin $out/bin
+            '';
+
+          };
           swift-mint = with pkgs; stdenv.mkDerivation {
             version = "0.17.0";
             name = "swift-mint";
