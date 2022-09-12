@@ -27,11 +27,10 @@
               stdenv.cc.cc.lib
             ];
 
+            sourceRoot = ".";
+
             installPhase = ''
-              mkdir -p $out/bin $out/include $out/lib
-              cp -r bin/* $out/bin
-              cp -r lib/* $out/lib
-              cp -r include/* $out/include
+              cp -r . $out
             '';
 
           };
