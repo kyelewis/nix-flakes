@@ -20,7 +20,7 @@
 
             installPhase = ''
               mkdir -p $out/bin
-              cp gbdk/bin $out/bin
+              cp bin/* $out/bin
             '';
 
           };
