@@ -18,6 +18,10 @@
               sha256 = "sha256:1w68a1aplljc0jn834k02dd18rf3vziddyylywz7pppr8y3pd5vj";
             };
 
+            nativeBuildInputs = [
+              autoPatchelfHook
+            ];
+
             installPhase = ''
               mkdir -p $out/bin
               cp bin/* $out/bin
