@@ -22,6 +22,11 @@
               autoPatchelfHook
             ];
 
+            buildInputs = [
+              zlib.dev
+              stdenv.cc.cc.lib
+            ];
+
             installPhase = ''
               mkdir -p $out/bin
               cp bin/* $out/bin
